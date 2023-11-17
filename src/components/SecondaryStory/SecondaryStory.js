@@ -49,7 +49,9 @@ const Abstract = styled.p`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  /*Necessary for line clamping*/
   overflow: hidden;
+  align-self: start;
 `;
 
 export default SecondaryStory;
