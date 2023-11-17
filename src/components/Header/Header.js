@@ -40,16 +40,16 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
-        <LeftActionsWrapper>
+        <LargeDesignActionGroup>
           <LeftActions />
-        </LeftActionsWrapper>
+        </LargeDesignActionGroup>
         <LogoWrapper>
           <Logo />
         </LogoWrapper>
-        <RightActionsWrapper>
+        <SubscribeWrapper>
           <Button>Subscribe</Button>
           <Link href="/">Already a subscriber?</Link>
-        </RightActionsWrapper>
+        </SubscribeWrapper>
       </MainHeader>
     </header>
   );
@@ -68,7 +68,7 @@ const SuperHeader = styled.div`
   background: var(--color-gray-900);
   color: white;
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: none;
   }
 `;
@@ -92,48 +92,54 @@ const ActionGroup = styled.div`
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
-  display: grid;
-  grid-template-columns: 1fr min(100%, 1fr) 1fr;
+  display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+  
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: revert;
+    margin-top: 16px;
+  }
 `;
 
-const LeftActionsWrapper = styled(ActionGroup)`
+const LargeDesignActionGroup = styled(ActionGroup)`
   display: none;
   
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: flex;
-    grid-column: 1;
   }
 `;
 
 const LogoWrapper = styled.div`
-  grid-column: 1 / -1;
-  
-  @media ${QUERIES.desktopAndUp} {
-    grid-column: 2;
-  }
+  color: var(--color-offblack);
 `;
 
-const RightActionsWrapper = styled(ActionGroup)`
-  display: none;
-  flex-direction: column;
-  grid-column: 3;
-  justify-self: end;
-  align-items: center;
-
-  @media ${QUERIES.desktopAndUp} {
-    display: flex;
+const SubscribeWrapper = styled(LargeDesignActionGroup)`
+  @media ${QUERIES.laptopAndUp} {
+    display: revert;
+    position: relative;
+    justify-self: end;
   }
 `;
 
 const Link = styled.a`
-  font-family: var(--font-family-serif);
+  position: absolute;
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: calc(14 / 16 * 1rem);
+  color: var(--color-gray-900);
   font-style: italic;
   text-decoration-line: underline;
 `;
-
-
 
 export default Header;
