@@ -82,12 +82,6 @@ const StoryList = styled.div`
     padding-bottom: 0;
     border-bottom: none;
   }
-
-  @media ${QUERIES.tabletOnly} {
-    & > * {
-      
-    }
-  }
 `;
 
 const OpinionSection = styled.section`
@@ -105,8 +99,8 @@ const OpinionStoryList = styled(StoryList)`
     & > * {
       flex: 1;
       min-width: calc(172 / 16 * 1rem);
-      border: none;
-      padding: 0;
+      border: revert;
+      padding: revert;
     }
   }
 `;

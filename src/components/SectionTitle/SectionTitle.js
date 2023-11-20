@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  position: relative;
 `;
 
 const Title = styled.h2`
@@ -26,6 +27,8 @@ const Title = styled.h2`
   font-weight: var(--font-weight-bold);
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  position: sticky;
+  left: 0;
 `;
 
 const CornerLink = styled.a`
@@ -33,6 +36,8 @@ const CornerLink = styled.a`
   color: var(--color-gray-900);
   font-family: var(--font-family-sans-serif);
   font-weight: var(--font-weight-bold);
+  position: sticky;
+  margin-right: 0;
 
   &:hover {
     text-decoration: underline;
