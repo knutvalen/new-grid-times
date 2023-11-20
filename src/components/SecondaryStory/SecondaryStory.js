@@ -24,9 +24,11 @@ const Wrapper = styled.article`
   color: var(--color-gray-900);
   
   @media ${QUERIES.tabletOnly} {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    grid-template-areas:
+    'image'
+    'heading'
+    'abstract';
+    grid-template-columns: 1fr;
   }
 `;
 
