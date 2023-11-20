@@ -46,6 +46,7 @@ const SpecialtyStoryGrid = () => {
 };
 
 const Wrapper = styled.div`
+  --min-column-width: calc(182 / 16 * 1rem);
   display: grid;
   row-gap: 48px;
   
@@ -67,7 +68,7 @@ const MarketsSection = styled.section`
 
 const MarketCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(168 / 16 * 1rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
   gap: 16px;
 `;
 
@@ -79,7 +80,7 @@ const SportsSection = styled.section`
 
 const SportsStories = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
   gap: 16px;
   
   @media ${QUERIES.tabletAndUp} {
