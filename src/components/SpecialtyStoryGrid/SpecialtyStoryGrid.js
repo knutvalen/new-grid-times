@@ -47,17 +47,27 @@ const SpecialtyStoryGrid = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  gap: 48px;
+  row-gap: 48px;
+  
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const MarketsSection = styled.section`
   display: flex;
   flex-direction: column;
+
+  @media ${QUERIES.laptopAndUp} {
+    padding-right: 16px;
+    border-right: 1px solid var(--color-gray-300);
+    margin-right: 16px;
+  }
 `;
 
 const MarketCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(180 / 16 * 1rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(168 / 16 * 1rem), 1fr));
   gap: 16px;
 `;
 
