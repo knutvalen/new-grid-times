@@ -23,6 +23,8 @@ const Wrapper = styled.article`
   justify-content: space-between;
   gap: 8px;
   color: var(--color-gray-900);
+  width: calc(172 / 16 * 1rem);
+  padding-bottom: 16px;
   
   @media ${QUERIES.tabletOnly} {
     flex-direction: column;

@@ -30,11 +30,11 @@ const MainStoryGrid = () => {
 
       <OpinionSection>
         <SectionTitle>Opinion</SectionTitle>
-        <StoryList>
+        <OpinionStoryList>
           {OPINION_STORIES.map((story, index) => (
             <OpinionStory key={story.id} {...story} />
           ))}
-        </StoryList>
+        </OpinionStoryList>
       </OpinionSection>
 
       <AdvertisementSection>
@@ -85,6 +85,14 @@ const StoryList = styled.div`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+  isolation: isolate;
+  overflow: auto;
+`;
+
+const OpinionStoryList = styled.div`
+  display: flex;
+  gap: 32px;
+  
 `;
 
 const AdvertisementSection = styled.section`
