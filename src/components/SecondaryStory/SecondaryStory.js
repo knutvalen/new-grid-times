@@ -22,6 +22,12 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
+  
+  @media ${QUERIES.tabletOnly} {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 const Image = styled.img`
@@ -31,6 +37,10 @@ const Image = styled.img`
   height: 120px;
   border-radius: 4px;
   object-fit: cover;
+  
+  @media ${QUERIES.tabletOnly} {
+    margin-bottom: 8px;
+  }
 `;
 
 const Heading = styled.h2`
