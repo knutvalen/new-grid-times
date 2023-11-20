@@ -117,9 +117,7 @@ const StoryList = styled.div`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
-  isolation: isolate;
-  overflow: auto;
-
+  
   @media ${QUERIES.laptopAndUp} {
     margin-top: -8px;
   }
@@ -133,7 +131,6 @@ const OpinionStoryList = styled(StoryList)`
     
     & > * {
       flex: 1;
-      min-width: calc(172 / 16 * 1rem);
       border: revert;
       padding: revert;
     }
